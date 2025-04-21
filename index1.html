@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <input type="text" placeholder="enter your first digit " id="firstinp" />
+      <input type="text" placeholder="enter your first digit " id="secondinp" />
+      <button>submit</button>
+    </div>
+    <div class="maindiv"></div>
+    <script>
+      let inputfrst = document.querySelector("#firstinp");
+      let secondinp = document.querySelector("#secondinp");
+      let button = document.querySelector("button");
+      let maindiv = document.querySelector(".maindiv");
+      let para = document.createElement("p");
+      button.addEventListener("click", () => {
+        if (Number(inputfrst.value) <= Number(secondinp.value)) {
+          let b = Math.floor(Math.random() * secondinp.value);
+          //   console.log(b)
+          if (b > inputfrst.value && secondinp.value > b) {
+            para.innerHTML = b;
+            maindiv.append(para);
+          }
+         
+        } else {
+          alert("enter your right number");
+        }
+      });
+    </script>
+  </body>
+</html>
